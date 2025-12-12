@@ -327,9 +327,10 @@ main.hero {
 .hero-content h1 {
   font-size: 3.5rem;
   font-weight: 800;
-  width: 300px;
-  border-radius: 50px;
+  background-color: #033151;
+  /*background: linear-gradient(135deg, #033151);*/
   color: #36454F;
+  background-clip: text;
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
@@ -445,6 +446,7 @@ footer {
   .footer-section h3 { font-size: 1.1rem; }
   .footer-section p { font-size: 0.85rem; }
 }
+
 
 
 
