@@ -21,8 +21,8 @@ body {
   background-attachment: scroll;
 }
 
-body.light { color: #333; }
-body.dark { color: #e0e0e0; }
+body.light { color: #121212; }
+body.dark { color: #fff; }
 
 /* ==================== 2. Navbar ==================== */
 /* Navbar Container */
@@ -444,4 +444,5 @@ footer {
   .footer-section h3 { font-size: 1.1rem; }
   .footer-section p { font-size: 0.85rem; }
 }
+
 
