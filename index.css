@@ -337,7 +337,7 @@ main.hero {
 
 .hero-content p {
   font-size: 1.2rem;
-  color: #666;
+  color: #fff;
   margin-bottom: 2.5rem;
   max-width: 600px;
   margin-left: auto;
@@ -444,3 +444,4 @@ footer {
   .footer-section h3 { font-size: 1.1rem; }
   .footer-section p { font-size: 0.85rem; }
 }
+
