@@ -337,14 +337,14 @@ main.hero {
 
 .hero-content p {
   font-size: 1.2rem;
-  color: #fff;
+  color: #121212;
   margin-bottom: 2.5rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-body.dark .hero-content p { color: #bbb; }
+body.dark .hero-content p { color: #fff; }
 
 /* ==================== 4. Card Grid ==================== */
 .card-grid {
@@ -444,5 +444,6 @@ footer {
   .footer-section h3 { font-size: 1.1rem; }
   .footer-section p { font-size: 0.85rem; }
 }
+
 
 
