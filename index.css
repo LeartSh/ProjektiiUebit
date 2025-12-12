@@ -327,18 +327,18 @@ main.hero {
 .hero-content h1 {
   font-size: 3.5rem;
   font-weight: 800;
-  background: linear (#fff);
-  backround-color: #fff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  width: 300px;
+  border-radius: 50px;
+  color: #36454F;
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  color: #121212;
+  color: whitesmoke;
+  background-color: #033151;
+  border-radius: 50px;
   margin-bottom: 2.5rem;
   max-width: 600px;
   margin-left: auto;
@@ -445,6 +445,7 @@ footer {
   .footer-section h3 { font-size: 1.1rem; }
   .footer-section p { font-size: 0.85rem; }
 }
+
 
 
 
