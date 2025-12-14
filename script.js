@@ -22,7 +22,8 @@
             body.classList.add('dark');
             themeToggle.checked = true;
         }
-        
+        </script>
+        <script>
         // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -39,7 +40,8 @@
                 mobileMenu.classList.remove('active');
             });
         });
-        
+</script>
+        <script>
         // Form Validation
         const loginForm = document.getElementById('login-form');
         
@@ -65,3 +67,4 @@
             }
         });
     </script>
+
