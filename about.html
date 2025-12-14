@@ -97,48 +97,11 @@
   </footer>
 
   <!-- Scripts -->
-  <script>
-    // Theme Toggle
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
-      document.body.classList.toggle("light");
-      const isDark = document.body.classList.contains("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    }
-
-    // Load saved theme on page load
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark");
-      document.body.classList.remove("light");
-    }
-
-    // Optional: add event listener for checkbox
-    document.getElementById("themeToggle").addEventListener("change", toggleTheme);
-  </script>
-
-  <script>
-     // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking links
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-  </script>
-
   <script src="script.js"></script>
 
 </body>
 </html>
+
 
 
 
