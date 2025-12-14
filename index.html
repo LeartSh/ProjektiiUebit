@@ -46,8 +46,8 @@
         <div class="mobile-menu-links">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
-            <a href="contact">Contact Us</a>
-            <a href="colleges">Fakultetet</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="colleges.html">Fakultetet</a>
         </div>
         <div class="mobile-auth-buttons">
             <a href="login.html"><button id="mobile-login-btn">Login</button></a>
@@ -114,52 +114,11 @@
             <p>&copy; 2025 Studenti-Ks.</p>
         </div>
     </footer>
-    
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        
-        themeToggle.addEventListener('change', function() {
-            if (this.checked) {
-                body.classList.remove('light');
-                body.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark');
-                body.classList.add('light');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-        
-        // Check saved theme
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        if (savedTheme === 'dark') {
-            body.classList.remove('light');
-            body.classList.add('dark');
-            themeToggle.checked = true;
-        }
-        
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking links
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-    </script>
+<script src="script.js"></script>
 </body>
 
 </html>
+
 
 
 
