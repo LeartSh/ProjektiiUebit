@@ -11,19 +11,19 @@
     <!-- NAVBAR -->
     <nav class="nav-container">
         <!-- Logo -->
-        <a href><img class="logo" src="LogoStudentiks_pabg.png" alt="Studenti-Ks Logo"></a>
+        <img src="LogoStudentiks_pabg.png" alt="Fakultetist Logo" class="logo">
         
         <!-- Desktop Navigation Links -->
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="about.html">AboutUs</a>
-            <a href="contact.html">ContactUs</a>
+            <a href="about.html">Rreth Nesh</a>
+            <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
         </div>
         
         <!-- Desktop Auth Buttons -->
         <div class="auth-buttons">
-            <a href="login.html"><button id="loginBtn">Login</button></a>
+        <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
             
             <!-- Theme Toggle -->
@@ -44,10 +44,10 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="contact">Contact Us</a>
-            <a href="colleges">Fakultetet</a>
+            <a href="index.html">Ballina</a>
+            <a href="about.html">Rreth Nesh</a>
+            <a href="contact.html">Kontakti</a>
+            <a href="colleges.html">Fakultetet</a>
         </div>
         <div class="mobile-auth-buttons">
             <a href="login.html"><button id="mobile-login-btn">Login</button></a>
@@ -96,12 +96,73 @@
     <footer>
         © 2025 Studenti-Ks. All rights reserved.
     </footer>
-    <script src="script.js"></script>
+    
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                body.classList.remove('light');
+                body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark');
+                body.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Check saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.classList.remove('light');
+            body.classList.add('dark');
+            themeToggle.checked = true;
+        }
+        
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Form Validation
+        const loginForm = document.getElementById('login-form');
+        
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                // Show loading state
+                const submitBtn = document.querySelector('.login-submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Logging in...';
+                submitBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    alert('Login successful!');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 1500);
+            }
+        });
+    </script>
 </body>
-
 </html>
-
-
-
-
-
