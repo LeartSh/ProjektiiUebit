@@ -14,7 +14,7 @@ html, body {
 
 /* Body & Background */
 body {
-  background-image: url(fotot/UBT7784-e1564990441516.jpg);
+  background-image: url(UBT7784-e1564990441516.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -473,3 +473,4 @@ footer {
   .mobile-menu-links a { font-size: 18px; }
   .mobile-auth-buttons button { padding: 12px; font-size: 16px; }
 }
+
