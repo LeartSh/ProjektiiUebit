@@ -19,6 +19,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
+  overflow-x: hidden;
 }
 
 /* ==================== 2. Navbar ==================== */
@@ -473,6 +474,7 @@ footer {
   .mobile-menu-links a { font-size: 18px; }
   .mobile-auth-buttons button { padding: 12px; font-size: 16px; }
 }
+
 
 
 
