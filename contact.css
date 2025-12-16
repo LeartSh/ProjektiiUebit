@@ -564,7 +564,8 @@ footer {
 
   .logo {
     order: 1;
-    flex: 1;
+    flex: 0;
+    margin-right: auto;
   }
 
   .nav-links {
