@@ -18,7 +18,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
   backdrop-filter:blur(10px);
 }
 
@@ -474,6 +474,7 @@ footer {
   .mobile-menu-links a { font-size: 18px; }
   .mobile-auth-buttons button { padding: 12px; font-size: 16px; }
 }
+
 
 
 
