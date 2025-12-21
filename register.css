@@ -339,7 +339,8 @@ main {
 
 .form-container {
   width: 100%;
-  max-width: 480px;        /* limits form width */
+  min-height: 100vh;
+  max-width: 400px;        /* limits form width */
   padding: 40px 30px;
   margin: 0 auto;          /* horizontal center */
   background: #fff;
@@ -379,7 +380,9 @@ body.dark .form-container input {
 }
 
 .submit-btn {
-  width: 100%;
+  width: 90%;
+  margin: 20px auto 0 auto;
+  display: block;
   padding: 14px;
   align-items: center;
   background: linear-gradient(135deg, #2652c0, #1ee9c0);
@@ -407,9 +410,22 @@ footer {
 
 /* ==================== 5. Responsive ==================== */
 @media (max-width: 768px) {
-  .nav-links, .auth-buttons { display: none; }
-  .hamburger { display: flex; }
-  .logo { height: 50px; }
+  .nav-links, .auth-buttons { 
+    display: none; 
+  }
+  
+  .hamburger{ 
+    display: flex; 
+  }
+  
+  .logo{ 
+    height: 50px; 
+  }
+  .form-container{
+  width: 90%;
+  margin: 20px auto 0 auto;
+  display: block;
+  }
 }
 
 @media (max-width: 640px) {
@@ -433,4 +449,3 @@ footer {
     padding: 12px;
   }
 }
-
