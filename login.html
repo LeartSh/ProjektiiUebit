@@ -11,7 +11,7 @@
     <!-- NAVBAR -->
     <nav class="nav-container">
         <!-- Logo -->
-        <a href="index.html"><img src="LogoStudentiks_pabg.png" alt="Fakultetist Logo" class="logo"></a>
+        <img src="LogoStudentiks_pabg.png" alt="Fakultetist Logo" class="logo">
         
         <!-- Desktop Navigation Links -->
         <div class="nav-links">
@@ -52,10 +52,7 @@
         <div class="mobile-auth-buttons">
             <a href="login.html"><button id="mobile-login-btn">Login</button></a>
             <a href="register.html"><button id="mobile-register-btn">Create Your Account</button></a>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
+            <i id="switch" class="fa-solid fa-moon"></i>
         </div>
     </div>
     
@@ -168,7 +165,13 @@
             }
         });
     </script>
+     <script>
+        const switch2 = document.getElementById('switch');
+
+switch2.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
+    
+    </script>
 </body>
 </html>
-
-
