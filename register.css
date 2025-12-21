@@ -204,8 +204,8 @@ input:checked + .slider:before {
 
 /* Hamburger Menu - Hidden on desktop */
 .hamburger {
-  display: none;
-  width: 35px;
+  display: flex;
+  width: 43px;
   height: 30px;
 
   flex-direction: column;
@@ -221,7 +221,6 @@ input:checked + .slider:before {
 }
 
 .hamburger span {
-  display: flex;
   height: 4px;
   width: 100%;
   justify-content: space-between;
@@ -449,4 +448,3 @@ footer {
     padding: 12px;
   }
 }
-
