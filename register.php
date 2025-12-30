@@ -1,5 +1,5 @@
 <?php
-require "config/db.php";
+require "db.php";
 
 $name     = $_POST['name'];
 $email    = $_POST['email'];
