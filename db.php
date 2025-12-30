@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 header(location: "index.php");
 exit();
 }
-if($conn->connection_status)
 
 $conn->set_charset("utf8");
 ?>
+
