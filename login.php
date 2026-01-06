@@ -1,52 +1,43 @@
 <?php
 session_start();
+header('Content-Type: application/json');
 
+$conn = new mysqli("localhost", "root", "", "studentiks");
 
-$conn = new mysqli("localhost:3307", "username", "password", "database");
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
-if (isset($_SESSION['email'])) {
-    header("Location: index.php");
+    echo json_encode(["status" => "error", "message" => "Connection failed"]);
     exit();
 }
 
+$response = ["status" => "error", "message" => ""];
 
-$error = "";
-
-if (isset($_POST['login-submit-btn'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    if (empty($email) || empty($password)) {
-        $error = "Please enter both email and password.";
-    } else {
-        $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
+    $stmt = $conn->prepare("SELECT id, name, password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-
-            if (password_verify($password, $row['password'])) {
-                $_SESSION['email'] = $row['email'];
-                header("Location: index.php");
-                exit();
-            } else {
-                $error = "Incorrect password.";
-            }
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['name'] = $row['name'];
+            $_SESSION['email'] = $email;
+            
+            $response["status"] = "success";
         } else {
-            $error = "Email not found.";
+            $response["message"] = "Incorrect password.";
         }
-
-        $stmt->close();
+    } else {
+        $response["message"] = "No account found with that email.";
     }
+    $stmt->close();
 }
 
 $conn->close();
-
-echo json_encode(['error' => $error]);
-?>
+echo json_encode($response);
+exit();
